@@ -7,6 +7,8 @@ const _mongo = new Mongo();
 
 /* GET single job. */
 router.get('/:job_id', function(req, res, next) {
+  
+
   _mongo.search("jobs", {"soc_code":req.params.job_id})
   .then(job=>{
     if(job.length > 0){
@@ -19,6 +21,14 @@ router.get('/:job_id', function(req, res, next) {
   .catch(error=>{
     console.log('Error in query --'+error);
 
+  });
+
+  _mongo.update("jobs", {soc_code:req.params.job_id}, {$inc:{search_count:1}})
+  .then(result=>{
+    //console.log("Count updated");
+  })
+  .catch(error=>{
+    console.log('Error in query --'+error);
   });
  
 });

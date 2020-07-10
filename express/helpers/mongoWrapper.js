@@ -55,6 +55,29 @@ class MongoAPI extends MongoClient {
         // finally { this.client.close() }
     }
 
+    /**
+    * Wrapper function to the Monogo update, to update records in the database
+    * 
+    * @param {string} collection 
+    * @param {Object} filter 
+    * @param {Object} updateParams 
+    * @param {Object} options 
+    */
+   async update(collection, filter, updateParams, options) {
+    if (!this.isConnected()) { await this.establishConnection(); }
+
+    try {
+        const dbCollection = this.client.db(_keys.DB).collection(collection);
+        const x = await dbCollection.updateOne(filter, updateParams, options);
+    } catch (error) {
+        console.log('DB Update Unsuccessfull');
+        console.log(error);
+    } finally {
+        // this.client.close();
+    }
+
+}
+
     
    
 }
