@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'card.dart';
+import 'search_bar.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -8,6 +9,11 @@ class Home extends StatelessWidget {
         appBar: AppBar(
           title: Text('Card'),
         ),
-        body: CustomCardWidget());
+        body: Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[CustomCardWidget(), CustomSearchBarWidget()],
+          ),
+        ));
   }
 }
