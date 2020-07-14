@@ -9,8 +9,8 @@ ThemeData appTheme() {
     primaryColor: themeBlue1,
     accentColor: Colors.orange,
     hintColor: textDarkGrey,
-    dividerColor: Colors.white,
-    buttonColor: Colors.white,
+    dividerColor: Colors.green,
+    buttonColor: Colors.red,
     scaffoldBackgroundColor: Colors.transparent,
     canvasColor: Colors.white,
   );
@@ -23,21 +23,28 @@ LinearGradient themeGradient = LinearGradient(
 
 BoxShadow cardShadow = BoxShadow(
   color: Colors.grey.withOpacity(0.25),
-  spreadRadius: 10,
-  blurRadius: 50,
+  spreadRadius: 5,
+  blurRadius: 25,
   offset: Offset(0, 0), // changes position of shadow
 );
 
 // - HOME SCREEN
 //   - Search
 BoxDecoration searchBarDecoration = BoxDecoration(
-  borderRadius: BorderRadius.circular(10),
+  borderRadius: BorderRadius.circular(15),
   color: Colors.white,
 );
 
 BoxDecoration searchButtonDecoration = BoxDecoration(
-  borderRadius: BorderRadius.circular(5),
+  borderRadius: BorderRadius.circular(10),
   gradient: themeGradient,
+);
+
+BoxDecoration top60Decoration = BoxDecoration(
+  gradient: themeGradient,
+  borderRadius: BorderRadius.only(
+      bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
+  // boxShadow: [cardShadow],
 );
 
 InputDecoration searchBarTextDecoration = InputDecoration(
@@ -49,3 +56,26 @@ InputDecoration searchBarTextDecoration = InputDecoration(
 
 TextStyle textBoxStyle =
     TextStyle(fontSize: 17, fontFamily: 'TT', fontWeight: FontWeight.w500);
+
+TextStyle titleStyle = TextStyle(
+  fontFamily: 'TT',
+  fontWeight: FontWeight.w400,
+  fontSize: 50,
+  color: Colors.white,
+);
+
+TextStyle titleBoldStyle = TextStyle(
+  fontFamily: 'TT',
+  fontWeight: FontWeight.w700,
+  fontSize: 50,
+  color: Colors.white,
+);
+
+TextStyle subTitleStyle =
+    TextStyle(fontFamily: 'TT', fontSize: 18, color: Colors.white);
+
+TextStyle subTitleBoldStyle = TextStyle(
+    fontFamily: 'TT',
+    fontSize: 18,
+    color: Colors.white,
+    fontWeight: FontWeight.w700);

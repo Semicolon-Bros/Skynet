@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:frontend/home_screen/helper.dart';
-import 'package:frontend/style.dart';
 
 class HomeScreenPage extends StatefulWidget {
   @override
@@ -10,21 +10,29 @@ class HomeScreenPage extends StatefulWidget {
 class _HomeScreenPageState extends State<HomeScreenPage> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+        // Color for Android
+        statusBarColor: Colors.white,
+        // Dark == white status bar -- for IOS.
+        statusBarBrightness: Brightness.dark));
     return Scaffold(
+      // To avoid keyboard pushing or resizing content upwards
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
       body: Container(
-          padding: EdgeInsets.all(20),
-          decoration: BoxDecoration(gradient: themeGradient),
           child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 100,
-              ),
-              searchBar()
-            ],
-          )),
+        children: <Widget>[top60(), bot40()],
+      )),
     );
   }
+}
+
+Widget bot40() {
+  return Expanded(
+      flex: 4,
+      child: Container(
+          // alignment: Alignment(0.0, -0.5),
+          decoration: BoxDecoration(
+        color: Colors.white,
+      )));
 }
