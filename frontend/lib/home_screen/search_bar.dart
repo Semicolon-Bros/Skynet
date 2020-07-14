@@ -4,11 +4,11 @@ class CustomSearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: MediaQuery.of(context).size.width * 0.8,
-        height: 60,
+        // width: MediaQuery.of(context).size.width * 0.8,
+        height: 50,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 1.0),
-            borderRadius: BorderRadius.circular(10.0)),
+            border: Border.all(color: Colors.white, width: 1.0),
+            borderRadius: BorderRadius.circular(15.0)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,8 +35,8 @@ class CustomSearchBarWidget extends StatelessWidget {
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(10.0)),
                 child: SizedBox(
-                  height: 60,
-                  width: 60,
+                  height: 50,
+                  width: 50,
                   child: IconButton(
                     icon: Icon(Icons.search),
                     color: Colors.white,

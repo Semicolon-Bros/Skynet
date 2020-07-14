@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'card.dart';
-import 'search_bar.dart';
+import '../home_screen/search_bar.dart';
 
 class Home extends StatelessWidget {
   @override
