@@ -105,7 +105,74 @@ Widget top60() {
 // --------------------------------
 // Start of Bot Half
 // --------------------------------
+Widget botTitle() {
+  return Container(
+    padding: EdgeInsets.symmetric(vertical: 20.0),
+    child: Column(
+      children: <Widget>[
+        Text(
+          'Most Searched Industry',
+          style: botTitleStyle,
+        ),
+        SizedBox(
+          height: 2,
+        ),
+        Container(
+            width: 100,
+            height: 7,
+            decoration: BoxDecoration(
+                gradient: themeGradient,
+                borderRadius: BorderRadius.circular(3.0)))
+      ],
+    ),
+  );
+}
 
+Widget singleCard() {
+  return Container(
+    padding: EdgeInsets.fromLTRB(20, 0.0, 0.0, 0.0),
+    child: Container(
+      height: 200,
+      width: 150,
+      decoration: industryCardDecoration,
+    ),
+  );
+}
+
+Widget industryCards() {
+  return Container(
+    padding: EdgeInsets.symmetric(horizontal: 0),
+    height: 200,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+        singleCard(),
+        singleCard(),
+        singleCard(),
+        singleCard(),
+        singleCard(),
+        singleCard(),
+      ],
+    ),
+  );
+}
+
+Widget bot40() {
+  return Expanded(
+      flex: 4,
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          children: <Widget>[
+            botTitle(),
+            SizedBox(
+              height: 20,
+            ),
+            industryCards()
+          ],
+        ),
+      ));
+}
 // --------------------------------
 // End of Bot Half
 // --------------------------------

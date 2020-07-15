@@ -26,13 +26,3 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
     );
   }
 }
-
-Widget bot40() {
-  return Expanded(
-      flex: 4,
-      child: Container(
-          // alignment: Alignment(0.0, -0.5),
-          decoration: BoxDecoration(
-        color: Colors.white,
-      )));
-}

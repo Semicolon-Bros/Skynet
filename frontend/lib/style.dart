@@ -79,3 +79,14 @@ TextStyle subTitleBoldStyle = TextStyle(
     fontSize: 18,
     color: Colors.white,
     fontWeight: FontWeight.w700);
+
+TextStyle botTitleStyle = TextStyle(
+    fontFamily: 'TT',
+    fontSize: 24,
+    color: textDarkGrey,
+    fontWeight: FontWeight.w600);
+
+BoxDecoration industryCardDecoration = BoxDecoration(
+  gradient: themeGradient,
+  borderRadius: BorderRadius.circular(10.0),
+);
