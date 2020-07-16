@@ -98,3 +98,18 @@ BoxDecoration industryCardDecoration = BoxDecoration(
   gradient: themeGradient,
   borderRadius: BorderRadius.circular(10.0),
 );
+
+// Search Screen
+BoxDecoration searchAppBarDecoration = BoxDecoration(
+  gradient: themeGradient,
+  borderRadius: BorderRadius.only(
+    bottomLeft: Radius.circular(40.0),
+    bottomRight: Radius.circular(40.0),
+  ),
+);
+
+RoundedRectangleBorder searchAppBarBottomRadius = RoundedRectangleBorder(
+    borderRadius: BorderRadius.only(
+  bottomLeft: Radius.circular(40),
+  bottomRight: Radius.circular(40),
+));
