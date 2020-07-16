@@ -5,7 +5,7 @@ import 'package:frontend/style.dart';
 // Start of Top Half
 // --------------------------------
 
-Widget searchBar() {
+Widget searchBar(BuildContext context, bool enabled) {
   return Container(
     height: 50,
     decoration: searchBarDecoration,
@@ -21,12 +21,19 @@ Widget searchBar() {
               decoration: searchBarTextDecoration,
             )))),
         Expanded(
-          child: Container(
-            height: 40,
-            decoration: searchButtonDecoration,
-            child: Icon(
-              Icons.search,
-              color: Colors.white,
+          child: GestureDetector(
+            onTap: () {
+              if (enabled) {
+                Navigator.pushNamed(context, '/search/');
+              }
+            },
+            child: Container(
+              height: 40,
+              decoration: searchButtonDecoration,
+              child: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
             ),
           ),
         )
@@ -79,7 +86,7 @@ Widget subtitle() {
   );
 }
 
-Widget top60() {
+Widget top60(BuildContext context) {
   return Expanded(
     flex: 5,
     child: Container(
@@ -92,7 +99,7 @@ Widget top60() {
           subtitle(),
           Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 0, 0.0, 10.0),
-            child: searchBar(),
+            child: searchBar(context, true),
           ),
         ],
       ),
@@ -132,7 +139,6 @@ Widget singleCard() {
   return Container(
     padding: EdgeInsets.fromLTRB(20, 0.0, 0.0, 0.0),
     child: Container(
-      height: 200,
       width: 150,
       decoration: industryCardDecoration,
     ),
@@ -157,7 +163,7 @@ Widget industryCards() {
   );
 }
 
-Widget bot40() {
+Widget bot40(BuildContext context) {
   return Expanded(
       flex: 4,
       child: Container(
