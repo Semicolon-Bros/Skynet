@@ -70,6 +70,14 @@ TextStyle titleBoldStyle = TextStyle(
   fontSize: 50,
   color: Colors.white,
 );
+TextStyle smallTextStyle =
+    TextStyle(fontFamily: 'TT', fontSize: 12, color: Colors.white);
+
+TextStyle mediumTextBoldStyle = TextStyle(
+    fontFamily: 'TT',
+    fontSize: 16,
+    color: Colors.white,
+    fontWeight: FontWeight.w700);
 
 TextStyle subTitleStyle =
     TextStyle(fontFamily: 'TT', fontSize: 18, color: Colors.white);

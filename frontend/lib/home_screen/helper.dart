@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/style.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 // --------------------------------
 // Start of Top Half
@@ -128,13 +129,50 @@ Widget botTitle() {
   );
 }
 
-Widget singleCard() {
+Widget progressBar(String title, double completion) {
+  return Column(
+    children: <Widget>[
+      Container(
+        child: Text(
+          title,
+          style: smallTextStyle,
+          textAlign: TextAlign.left,
+        ),
+      ),
+      LinearPercentIndicator(
+        width: 140.0,
+        lineHeight: 5.0,
+        percent: completion,
+        backgroundColor: Colors.grey,
+        progressColor: Colors.white,
+      ),
+    ],
+  );
+}
+
+Widget singleCard(String industryName, String path) {
   return Container(
     padding: EdgeInsets.fromLTRB(20, 0.0, 0.0, 0.0),
     child: Container(
-      height: 200,
       width: 150,
       decoration: industryCardDecoration,
+      child: Container(
+        padding: EdgeInsets.all(5.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Image.asset(path),
+            Text(
+              industryName,
+              style: mediumTextBoldStyle,
+              textAlign: TextAlign.center,
+            ),
+            progressBar("★ POPULARITY", 0.5),
+            progressBar("＄INDUSTRY WORTH", 0.8),
+            progressBar("# EMPLOYEES", 0.9)
+          ],
+        ),
+      ),
     ),
   );
 }
@@ -142,16 +180,13 @@ Widget singleCard() {
 Widget industryCards() {
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 0),
-    height: 200,
+    height: 220,
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        singleCard(),
-        singleCard(),
-        singleCard(),
-        singleCard(),
-        singleCard(),
-        singleCard(),
+        singleCard("Computer & Mathematics", "images/computer_64x64.png"),
+        singleCard("Arts, Sports & Entertainment", "images/art_64x64.png"),
+        singleCard("Business & Finance", "images/bank_64x64.png"),
       ],
     ),
   );
