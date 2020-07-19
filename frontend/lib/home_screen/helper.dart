@@ -139,18 +139,22 @@ Widget botTitle() {
 Widget progressBar(String title, double completion) {
   return Column(
     children: <Widget>[
-      Container(
-        child: Text(
-          title,
-          style: smallTextStyle,
-          textAlign: TextAlign.left,
+      Align(
+        alignment: Alignment.centerLeft,
+        child: Container(
+          padding: EdgeInsets.fromLTRB(7.5, 0, 0, 0),
+          child: Text(
+            title,
+            style: smallTextStyle,
+            textAlign: TextAlign.left,
+          ),
         ),
       ),
       LinearPercentIndicator(
         width: 140.0,
         lineHeight: 5.0,
         percent: completion,
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.white38,
         progressColor: Colors.white,
       ),
     ],
