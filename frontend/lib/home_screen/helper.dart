@@ -174,7 +174,7 @@ Widget singleCard(String industryName, String path) {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 2.5),
-              child: Opacity(opacity: 0.7, child: Image.asset(path)),
+              child: Opacity(opacity: 0.75, child: Image.asset(path)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 7.5),
