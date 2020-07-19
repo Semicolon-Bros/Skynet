@@ -80,6 +80,12 @@ TextStyle mediumTextBoldStyle = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.w700);
 
+TextStyle industryCardTitleStyle = TextStyle(
+    fontFamily: 'TT',
+    fontSize: 18,
+    color: Colors.white,
+    fontWeight: FontWeight.w600);
+
 TextStyle subTitleStyle =
     TextStyle(fontFamily: 'TT', fontSize: 18, color: Colors.white);
 

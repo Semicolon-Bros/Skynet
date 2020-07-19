@@ -172,15 +172,21 @@ Widget singleCard(String industryName, String path) {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Image.asset(path),
-            Text(
-              industryName,
-              style: mediumTextBoldStyle,
-              textAlign: TextAlign.center,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 2.5),
+              child: Opacity(opacity: 0.7, child: Image.asset(path)),
             ),
-            progressBar("★ POPULARITY", 0.5),
-            progressBar("＄INDUSTRY WORTH", 0.8),
-            progressBar("# EMPLOYEES", 0.9)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 7.5),
+              child: Text(
+                industryName,
+                style: industryCardTitleStyle,
+                textAlign: TextAlign.left,
+              ),
+            ),
+            progressBar("※ POPULARITY", 0.5),
+            progressBar("﹩INDUSTRY WORTH", 0.8),
+            progressBar("﹟EMPLOYEES", 0.9)
           ],
         ),
       ),
@@ -212,7 +218,7 @@ Widget bot40(BuildContext context) {
           children: <Widget>[
             botTitle(),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             industryCards()
           ],
