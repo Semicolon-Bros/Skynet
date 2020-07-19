@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 Color themeBlue1 = Color(0xff3752F6);
 Color themeBlue2 = Color(0xff5D69DA);
 Color textDarkGrey = Color(0xff303638);
+Color seperatorColor = Color(0xffEFEFEF);
 
 ThemeData appTheme() {
   return ThemeData(
@@ -113,3 +114,18 @@ RoundedRectangleBorder searchAppBarBottomRadius = RoundedRectangleBorder(
   bottomLeft: Radius.circular(40),
   bottomRight: Radius.circular(40),
 ));
+
+TextStyle searchEntryTitleStyle =
+    TextStyle(fontFamily: 'TT', fontSize: 18, fontWeight: FontWeight.w500);
+
+TextStyle searchEntryDescStyle = TextStyle(
+    fontFamily: 'TT',
+    fontSize: 15,
+    color: Colors.grey,
+    fontWeight: FontWeight.w400);
+
+TextStyle searchEntryIndustryStyle = TextStyle(
+    fontFamily: 'TT',
+    fontSize: 15,
+    color: appTheme().primaryColor,
+    fontWeight: FontWeight.w600);
